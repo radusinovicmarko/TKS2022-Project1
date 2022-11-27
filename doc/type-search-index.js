@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"org.unibl.etf.tks","l":"Calculator"},{"p":"org.unibl.etf.tks","l":"CalculatorAdvanced"},{"p":"org.unibl.etf.tks.exceptions","l":"DivisionByZeroException"},{"p":"org.unibl.etf.tks.exceptions","l":"NotSupportedOperationException"},{"p":"org.unibl.etf.tks.exceptions","l":"NumberNotInAreaException"}]
