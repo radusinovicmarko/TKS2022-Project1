@@ -54,32 +54,32 @@ class CalculatorTest {
 	@DisplayName("calculate Method Tests")
 	@ParameterizedTest
 	@MethodSource("calculateTests")
-	void calculateTest(double currentValue, double value, char option, double result) throws NotSupportedOperationException, NumberNotInAreaException, DivisionByZeroException {
+	void calculateTest(Double currentValue, Double value, char option, Double result) throws NotSupportedOperationException, NumberNotInAreaException, DivisionByZeroException {
 		calc.setCurrentValue(currentValue);
 		calc.calculate(value, option);
 		assertThat(result, is(calc.getCurrentValue()));
 	}
 	
 	private static Stream<Arguments> calculateTests() {
-		return Stream.of(Arguments.of(0, 10, '+', 10),
-				Arguments.of(0, 10, '-', -10),
-				Arguments.of(0, 10, '*', 0),
-				Arguments.of(1, 10, '*', 10),
-				Arguments.of(0, 10, '/', 0),
-				Arguments.of(10, 2, '/', 5));
+		return Stream.of(Arguments.of(0.0, 10.0, '+', 10.0),
+				Arguments.of(0.0, 10.0, '-', -10.0),
+				Arguments.of(0.0, 10.0, '*', 0.0),
+				Arguments.of(1.0, 10.0, '*', 10.0),
+				Arguments.of(0.0, 10.0, '/', 0.0),
+				Arguments.of(10.0, 2.0, '/', 5.0));
 	}
 	
 	@DisplayName("calculate Method Exceptions Test")
 	@ParameterizedTest
 	@MethodSource("calculateTestsException")
-	void calculateTestExceptions(double currentValue, double value, char option, Class<? extends Exception> exceptionClass) throws NotSupportedOperationException, NumberNotInAreaException, DivisionByZeroException {
+	void calculateTestExceptions(Double currentValue, Double value, char option, Class<? extends Exception> exceptionClass) throws NotSupportedOperationException, NumberNotInAreaException, DivisionByZeroException {
 		calc.setCurrentValue(currentValue);
 		Exception exc = assertThrows(exceptionClass, () -> calc.calculate(value, option));
 		assertThat(exc, is(instanceOf(exceptionClass)));
 	}
 	
 	private static Stream<Arguments> calculateTestsException() {
-		return Stream.of(Arguments.of(0, 10, '%', NotSupportedOperationException.class),
-				Arguments.of(10, 0, '/', DivisionByZeroException.class));
+		return Stream.of(Arguments.of(0.0, 10.0, '%', NotSupportedOperationException.class),
+				Arguments.of(10.0, 0.0, '/', DivisionByZeroException.class));
 	}
 }

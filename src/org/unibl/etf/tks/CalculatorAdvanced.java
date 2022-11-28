@@ -75,7 +75,7 @@ public class CalculatorAdvanced extends Calculator {
 	private Boolean checkIfArmstrong(Integer value) {
 		Integer numDigits = numberOfDigits(value);
 		Integer temp = value, sum = 0;
-		while (temp != 0) {
+		while (temp > 0) {
 			sum += power(temp % 10, numDigits);
 			temp /= 10;
 		}
@@ -102,7 +102,7 @@ public class CalculatorAdvanced extends Calculator {
 	 */
 	private Integer numberOfDigits(Integer value) {
 		Integer count = 0;
-		while (value != 0) {
+		while (value > 0) {
 			count++;
 			value /= 10;
 		}
