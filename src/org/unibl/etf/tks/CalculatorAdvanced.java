@@ -13,8 +13,6 @@ import org.unibl.etf.tks.exceptions.NumberNotInAreaException;
  */
 public class CalculatorAdvanced extends Calculator {
 	
-	
-	
 	/**
 	 * Constructs a CalculatorAdvanced object with a default initial value of its state of 0.
 	 */

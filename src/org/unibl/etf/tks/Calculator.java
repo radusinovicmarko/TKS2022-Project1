@@ -18,8 +18,6 @@ public class Calculator {
 	 * Represents current value stored in the calculator. When an object is created, current value is 0.
 	 */
 	private Double currentValue = 0.0;
-	
-	
 
 	/**
 	 * Constructs a Calculator object with a default initial value of its state of 0.
@@ -66,7 +64,7 @@ public class Calculator {
 			currentValue *= value;
 			break;
 		case '/':
-			if (value == 0)
+			if (value == 0.0)
 				throw new DivisionByZeroException();
 			currentValue /= value;
 			break;

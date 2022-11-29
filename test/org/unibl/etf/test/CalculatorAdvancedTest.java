@@ -64,7 +64,7 @@ class CalculatorAdvancedTest {
 		return Stream.of(Arguments.of(0.0, '0', 1.0),
 				Arguments.of(10.0, '0', 1.0),
 				Arguments.of(0.0, '9', 0.0),
-				Arguments.of(10.0, '2', 100.0),
+				Arguments.of(-10.0, '2', 100.0),
 				Arguments.of(10.0, '1', 10.0),
 				Arguments.of(2.0, '9', 512.0),
 				Arguments.of(0.0, '!', 1.0),
@@ -82,7 +82,7 @@ class CalculatorAdvancedTest {
 	
 	private static Stream<Arguments> calculateAdvancedTestsException() {
 		return Stream.of(Arguments.of(0.0, 'x', NotSupportedOperationException.class),
-				Arguments.of(-1.0, '!', NumberNotInAreaException.class),
+				Arguments.of(-0.01, '!', NumberNotInAreaException.class),
 				Arguments.of(10.01, '!', NumberNotInAreaException.class));
 	}
 	

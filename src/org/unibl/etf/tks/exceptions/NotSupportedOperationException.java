@@ -9,7 +9,14 @@ package org.unibl.etf.tks.exceptions;
  */
 public class NotSupportedOperationException extends Exception {
 
+	/**
+	 * Used for serialization of object
+	 */
 	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Default message of the exception 
+	 */
 	private static final String MESSAGE = "Operation is not supported.";
 
 	/**

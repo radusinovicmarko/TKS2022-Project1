@@ -3,6 +3,7 @@ package org.unibl.etf.test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.closeTo;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.hamcrest.Matchers.instanceOf;
 
@@ -57,7 +58,7 @@ class CalculatorTest {
 	void calculateTest(Double currentValue, Double value, char option, Double result) throws NotSupportedOperationException, NumberNotInAreaException, DivisionByZeroException {
 		calc.setCurrentValue(currentValue);
 		calc.calculate(value, option);
-		assertThat(result, is(calc.getCurrentValue()));
+		assertThat(result, is(closeTo(calc.getCurrentValue(), 0.0001)));
 	}
 	
 	private static Stream<Arguments> calculateTests() {
